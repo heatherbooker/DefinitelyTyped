@@ -1,6 +1,6 @@
 // Type definitions for react-bootstrap
 // Project: https://github.com/react-bootstrap/react-bootstrap
-// Definitions by: Walker Burgin <https://github.com/walkerburgin>, Vincent Siao <https://github.com/vsiao>, Danilo Barros <https://github.com/danilojrr>, Batbold Gansukh <https://github.com/Batbold-Gansukh>, Raymond May Jr. <https://github.com/octatone>, Cheng Sieu Ly <https://github.com/chengsieuly>, Kat Busch <https://github.com/katbusch>
+// Definitions by: Walker Burgin <https://github.com/walkerburgin>, Vincent Siao <https://github.com/vsiao>, Danilo Barros <https://github.com/danilojrr>, Batbold Gansukh <https://github.com/Batbold-Gansukh>, Raymond May Jr. <https://github.com/octatone>, Cheng Sieu Ly <https://github.com/chengsieuly>, Kat Busch <https://github.com/katbusch>, Heather Booker <https://github.com/heatherbooker>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
@@ -187,6 +187,7 @@ declare namespace ReactBootstrap {
         navItem?: boolean;
         noCaret?: boolean;
         pullRight?: boolean;
+        title: any; // TODO: Add more specific type
     }
     type DropdownButtonProps = DropdownButtonBaseProps & React.HTMLProps<DropdownButton>;
     class DropdownButton extends React.Component<DropdownButtonProps> { }
@@ -273,13 +274,15 @@ declare namespace ReactBootstrap {
 
 
     // <SplitButton />
-    interface SplitButtonProps extends React.HTMLProps<SplitButton> {
+    interface SplitButtonBaseProps {
         bsStyle?: string;
         bsSize?: Sizes;
         dropdownTitle?: any; // TODO: Add more specific type
         dropup?: boolean;
         pullRight?: boolean;
+        title: any; // TODO: Add more specific type
     }
+    type SplitButtonProps = SplitButtonBaseProps & React.HTMLProps<SplitButton>;
     class SplitButton extends React.Component<SplitButtonProps> { }
 
 
@@ -422,6 +425,7 @@ declare namespace ReactBootstrap {
         placement?: string;
         positionLeft?: number | string; // String support added since v0.30.0
         positionTop?: number | string; // String support added since v0.30.0
+        title?: any; // TODO: Add more specific type
     }
     type Popover = React.ClassicComponent<PopoverProps>;
     var Popover: React.ClassicComponentClass<PopoverProps>;
@@ -615,7 +619,7 @@ declare namespace ReactBootstrap {
     var Tabs: React.ClassicComponentClass<TabsProps>;
 
     // <Tab />
-    interface TabProps extends React.HTMLProps<Tab> {
+    interface TabBaseProps {
         animation?: boolean;
         'aria-labelledby'?:string;
         bsClass?:string;
@@ -628,7 +632,9 @@ declare namespace ReactBootstrap {
         onExiting?: Function;
         unmountOnExit?: boolean;
         tabClassName?:string;
+        title: any; // TODO: Add more specific type
     }
+    type TabProps = TabBaseProps & React.HTMLProps<Tab>;
     interface TabClass extends React.ClassicComponentClass<TabProps> {
         Container: TabContainer;
         Pane: TabPane;

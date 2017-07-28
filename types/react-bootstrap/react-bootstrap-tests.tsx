@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Component, CSSProperties } from 'react';
 import {
     Button, ButtonToolbar, Modal, Well, ButtonGroup,
-    DropdownButton, MenuItem, Panel, ListGroup,
-    ListGroupItem, Accordion, Tooltip,
+    DropdownButton, SplitButton,  MenuItem, Panel,
+    ListGroup, ListGroupItem, Accordion, Tooltip,
     OverlayTrigger, Popover, ProgressBar,
     Nav, NavItem, Navbar, NavDropdown,
     Tabs, Tab, Pager, PageItem,
@@ -416,6 +416,14 @@ export class ReactBootstrapTest extends Component {
                 </div>
 
                 <div style={style}>
+                  <div style={{ height: 120, position: 'relative' } as CSSProperties}>
+                    <Popover placement='right' positionLeft={200} positionTop={50} title={<h2>JSX title</h2>}>
+                      And here's some <strong>amazing</strong> content. It's very engaging. right?
+                    </Popover>
+                  </div>
+                </div>
+
+                <div style={style}>
                   <ButtonToolbar>
                     <OverlayTrigger trigger='click' placement='left' overlay={<Popover title='Popover left'><strong>Holy guacamole!</strong> Check this info.</Popover>}>
                       <Button bsStyle='default'>Holy guacamole!</Button>
@@ -593,7 +601,7 @@ export class ReactBootstrapTest extends Component {
                 <div style={style}>
                   <Tabs defaultActiveKey={1} animation={false}>
                     <Tab eventKey={1} title='Tab 1'>Tab 1 content</Tab>
-                    <Tab eventKey={2} title='Tab 2'>Tab 2 content</Tab>
+                    <Tab eventKey={2} title={<div>Tab<hr/>2</div>}>Tab 2 content</Tab>
                     <Tab eventKey={3} title='Tab 3' disabled>Tab 3 content</Tab>
                   </Tabs>
                 </div>
@@ -1073,6 +1081,31 @@ export class ReactBootstrapTest extends Component {
                                 >
                                     <MenuItem key="1">Item</MenuItem>
                                 </DropdownButton>
+                            </InputGroup>
+                        </FormGroup>
+
+                        <FormGroup>
+                            <InputGroup>
+                                <FormControl type="text" />
+                                <DropdownButton
+                                  componentClass={InputGroup.Button}
+                                  id="input-dropdown-addon"
+                                  title={<h2>JSX title</h2>}
+                                >
+                                    <MenuItem key="1">Item</MenuItem>
+                                </DropdownButton>
+                            </InputGroup>
+                        </FormGroup>
+
+                        <FormGroup>
+                            <InputGroup>
+                                <FormControl type="text" />
+                                <SplitButton
+                                  id="input-splitbutton-addon"
+                                  title={<h2>JSX title</h2>}
+                                >
+                                    <MenuItem key="1">Item</MenuItem>
+                                </SplitButton>
                             </InputGroup>
                         </FormGroup>
 
